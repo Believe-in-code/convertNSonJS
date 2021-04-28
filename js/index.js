@@ -94,7 +94,7 @@ const translateNum = () => {
 
   for (let i = 0; i < num.length; i++) {
     if ((num[i] >= Number(startSys)) & (Number(startSys) <= 10)) {
-      alert("Некорректный ввод\nЕсли число дробное разделять надо точкой");
+      alert("Некорректный ввод");
       err++;
       ans.innerHTML = "";
       break;
