@@ -43,7 +43,6 @@ const transInDec = (n, s) => {
     for (let i = 0; i < n.length; i++) {
       answer += mainList[n[i]] * s ** i;
     }
-    console.log(answer);
     return answer;
   }
 };
@@ -58,7 +57,6 @@ const transFromDec = (n, s) => {
   let answer = "";
 
   while (intNum != 0) {
-    console.log(hexStr[intNum % s]);
     answer += hexStr[intNum % s];
     intNum = Math.floor(intNum / s);
   }
@@ -87,7 +85,7 @@ const translateNum = () => {
   let endSys = document.getElementById("endSys").value;
   var err = 0;
 
-  //Следующие 30 строк - проверка на корректность введенных данных
+  //Следующие 25 строк - проверка на корректность введенных данных
   if (startSys == endSys) {
     alert("Я не предназначен для бессмысленных вычислений");
     err++;
@@ -95,7 +93,7 @@ const translateNum = () => {
   }
 
   for (let i = 0; i < num.length; i++) {
-    if ((num[i] >= startSys) & (startSys <= 10)) {
+    if ((num[i] >= Number(startSys)) & (Number(startSys) <= 10)) {
       alert("Некорректный ввод\nЕсли число дробное разделять надо точкой");
       err++;
       ans.innerHTML = "";
