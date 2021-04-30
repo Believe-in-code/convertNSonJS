@@ -91,11 +91,27 @@ input {
   flex-wrap: wrap;
 }
 
+.operatinons {
+  max-width: 50%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 5% 0;
+  font-size: 28px;
+}
+
+.num2_wrapper {
+  max-width: 70%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
 .button_wrapper {
   width: 30%;
   height: 5%;
-  margin: auto;
-  margin-bottom: 3vh;
+  margin: 3vh auto;
   background-color: #0d335d;
   -moz-user-select: none;
   -khtml-user-select: none;
@@ -151,6 +167,10 @@ input {
   color: #333;
   background: #fff;
   margin: 0 10px;
+}
+
+.end_sys {
+  padding-top: 5%;
 }
 
 @media (max-width: 770px) {

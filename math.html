@@ -10,9 +10,96 @@
 </head>
 <body>
   <div class="router_wrapper">
-      <a href="index.html" class="pageName ">Перевод</a>
-      <a href="math.html" class="pageName current">Операции</a>
+    <a href="index.html" class="pageName">Перевод</a>
+    <a href="math.html" class="pageName current">Операции</a>
   </div>
-  <h1>Скоро!</h1>
+
+  <div class="app_wrapper">
+    <header>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </header>
+    <div class="num_wrapper">
+      <input id="num" type="text">
+      <select class="select" id='startSys'>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+      </select>
+    </div>
+    <div class="operatinons">
+      <select class="select" id='oper'>
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">&times;</option>
+        <option value="/">&divide;</option>
+      </select>
+    </div>
+    <div class="num2_wrapper">
+      <input id="num2" type="text">
+      <select class="select" id='secondSys'>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+      </select>
+    </div>
+    <div class="end_sys">
+      Ответ в
+      <select class="select" id='endSys'>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+      </select>
+    </div>
+    
+    <div onclick="mathOperations()" class="button_wrapper">Вычислить</div>
+    <div class="answer_wrapper">
+      <textarea id="ans" readonly>
+      </textarea>
+    </div>
+  </div>
+  </div>
+  </div>
+  <script src="js/index.js"></script>
 </body>
 </html>

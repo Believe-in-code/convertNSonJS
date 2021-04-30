@@ -75,7 +75,11 @@ const transFromDec = (n, s) => {
     floatAns = "." + floatAns;
     answer += floatAns;
   }
-  ans.innerHTML = answer.toUpperCase();
+  if (answer[0] == "0") {
+    ans.innerHTML = "0" + answer.toUpperCase();
+  } else {
+    ans.innerHTML = answer.toUpperCase();
+  }
 };
 
 //Общая функция, через которую вызываются остальные
@@ -83,7 +87,7 @@ const translateNum = () => {
   let num = document.getElementById("num").value.toLowerCase();
   let startSys = document.getElementById("startSys").value;
   let endSys = document.getElementById("endSys").value;
-  var err = 0;
+  let err = 0;
 
   //Следующие 25 строк - проверка на корректность введенных данных
   if (startSys == endSys) {
@@ -115,5 +119,56 @@ const translateNum = () => {
 
   if (!err) {
     transFromDec(transInDec(num, startSys), endSys);
+  }
+};
+
+//Математические операции
+const mathOperations = () => {
+  //Берем входные данные из разметки
+  let num2 = document.getElementById("num2").value.toLowerCase();
+  let num = document.getElementById("num").value.toLowerCase();
+  let startSys = document.getElementById("startSys").value;
+  let secondSys = document.getElementById("secondSys").value;
+  let endSys = document.getElementById("endSys").value;
+  let oper = document.getElementById("oper").value;
+  let err = 0;
+
+  //Проверка на корректность первого числа
+  for (let i = 0; i < num.length; i++) {
+    if ((num[i] >= Number(startSys)) & (Number(startSys) <= 10)) {
+      alert("Некорректный ввод первого числа");
+      err++;
+      ans.innerHTML = "";
+      break;
+    }
+    if ((mainList[num[i]] == undefined) & (num[i] != ".")) {
+      alert("Некорректный ввод первого числа");
+      err++;
+      ans.innerHTML = "";
+      break;
+    }
+  }
+
+  //Проверка на корректность второго числа
+  for (let i = 0; i < num2.length; i++) {
+    if ((num2[i] >= Number(secondSys)) & (Number(secondSys) <= 10)) {
+      alert("Некорректный ввод второго числа");
+      err++;
+      ans.innerHTML = "";
+      break;
+    }
+    if ((mainList[num2[i]] == undefined) & (num2[i] != ".")) {
+      alert("Некорректный ввод второго числа");
+      err++;
+      ans.innerHTML = "";
+      break;
+    }
+  }
+
+  if (!err) {
+    let ans = transInDec(num, startSys);
+    let ans1 = transInDec(num2, secondSys);
+    let totalAnswer = eval(ans + oper + ans1);
+    transFromDec(totalAnswer, endSys);
   }
 };
